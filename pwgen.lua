@@ -19,7 +19,7 @@ function password_gen(pw_len)
   for i = 1, 3 do
     local pw_tmp = ""
     for j = 1, pw_len do
-       local c = pw_seed[math.random(1, 62)]
+       local c = pw_seed[math.random(1, seed_len)]
        pw_tmp = pw_tmp .. c
     end
     table.insert(passwords, pw_tmp)
