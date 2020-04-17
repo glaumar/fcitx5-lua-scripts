@@ -136,8 +136,11 @@ function calculator(input)
   end
 
   result = stack[1]
+  -- 结果为整数时去掉小数部分(6.0 -> 6)
+  local inte, frac = math.modf(result)
+  if frac == 0.0 then result = inte end
+  
   return result
 end
 
 ime.register_command("cc", "calculator", "a simple calculator", "none")
-
